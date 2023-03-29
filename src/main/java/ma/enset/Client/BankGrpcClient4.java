@@ -51,8 +51,9 @@ public class BankGrpcClient4 {
                         .setAmount(nbr)
                         .build();
                 performStream.onNext(currencyRequest);
-                System.out.println("======> number = "+nbr);
                 ++counter;
+                System.out.println("--------"+counter+"-----------");
+                System.out.println("======> number = "+nbr);
                 if(counter==20){
                     performStream.onCompleted();
                     timer.cancel();
